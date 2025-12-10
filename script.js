@@ -1,58 +1,62 @@
-// Счётчик дней вместе (поменяй дату вашей встречи!)
-const startDate = new Date("2025-01-11"); // ←←←←←← ИЗМЕНИ НА СВОЮ ДАТУ!
-function updateCounter() {
-    const now = new Date();
-    const diff = now - startDate;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    document.getElementById("days").textContent = days;
-}
-updateCounter();
-setInterval(updateCounter, 86400000);
+// Курсор-сердечко
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
 
-// Модальные окна
-function openModal(num) {
-    document.getElementById("modal" + num).style.display = "flex";
+// Счётчик дней (измени дату!)
+const startDate = new Date("2025-01-11"); // ← твоя дата здесь
+const daysEl = document.getElementById("days");
+function updateDays() {
+    const diff = Date.now() - startDate;
+    daysEl.textContent = Math.floor(diff / 86400000);
 }
-function closeModal() {
-    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
+updateDays();
+setInterval(updateDays, 3600000);
+
+// Параллакс галереи
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.gallery-item').forEach(img => {
+        const speed = img.dataset.speed;
+        const yPos = -(window.scrollY * speed / 6);
+        img.style.transform = `translateY(${yPos}px)`;
+    });
+});
+
+// Флип карточек
+function flip(el) {
+    el.querySelector('.letter-inner').style.transform = 'rotateY(180deg)';
 }
 
-// Конфетти
-function shootConfetti() {
+// Конфетти-взрыв
+function explodeLove() {
     confetti({
-        particleCount: 150,
-        spread: 70,
+        particleCount: 300,
+        spread: 100,
         origin: { y: 0.6 },
-        colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ffc0cb']
+        colors: ['#ff69b4', '#ff1493', '#ffb6c1', '#ff8fab', '#ffc0cb']
     });
 }
 
-// Музыка
-function playSong() {
-    const audio = document.getElementById("loveSong");
-    if (audio.paused) {
-        audio.play();
-        alert("Сейчас заиграет наша песня ♪");
-    } else {
-        audio.pause();
-    }
-}
-
-// Летающие сердечки на фоне
+// Летающие сердечки (ещё красивее)
 setInterval(() => {
-    const h = document.createElement("div");
-    h.innerHTML = ["♡","♥","💗","💖","💕"][Math.floor(Math.random()*5)];
-    h.style.position = "fixed";
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.bottom = "-50px";
-    h.style.fontSize = Math.random() * 30 + 20 + "px";
-    h.style.color = ["#ff69b4","#ff1493","#ff8fab","#c71585"][Math.floor(Math.random()*4)];
-    h.style.zIndex = 0;
-    h.style.animation = "fly 7s linear forwards";
+    const h = document.createElement('div');
+    h.innerHTML = ['♡','♥','✧','❥','💗'][Math.floor(Math.random()*5)];
+    h.style.cssText = `
+        position: fixed;
+        left: ${Math.random()*100}vw;
+        top: -50px;
+        font-size: ${Math.random()*30+30}px;
+        color: #ff69b4;
+        pointer-events: none;
+        animation: fall 8s linear forwards;
+        z-index: 5;
+    `;
     document.body.appendChild(h);
-    setTimeout(() => h.remove(), 7000);
-}, 600);
+    setTimeout(() => h.remove(), 8000);
+}, 400);
 
 const style = document.createElement('style');
-style.innerHTML = `@keyframes fly { to { transform: translateY(-120vh) rotate(720deg); opacity: 0; } }`;
+style.innerHTML = `@keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: 0; } }`;
 document.head.appendChild(style);
