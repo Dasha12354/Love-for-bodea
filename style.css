@@ -101,3 +101,36 @@ body {
     margin: 10px 0 30px;
     color: #6b1f4a;
 }
+.modal-content.gallery {
+    max-height: 90vh;           /* окно не выше 90% экрана */
+    overflow-y: auto;           /* появляется прокрутка, если не влезло */
+    padding: 20px;
+}
+
+.photo-with-caption {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.photo-with-caption img {
+    max-width: 100%;
+    max-height: 70vh;            /* фотка не больше 70% высоты экрана */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255,105,180,0.4);
+}
+
+.photo-with-caption p {
+    font-size: 1.4rem;
+    margin-top: 12px;
+    color: #6b1f4a;
+}
+
+/* чтобы крестик всегда был виден */
+.close {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    font-size: 3rem;
+    color: #ff69b4;
+    z-index: 10000;
+}
