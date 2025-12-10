@@ -1,100 +1,34 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    background: linear-gradient(135deg, #ffeef8 0%, #ffd4e6 100%);
-    font-family: 'Comfortaa', cursive';
-    color: #5a1e3d;
-    overflow-x: hidden;
-    cursor: none;
+    margin: 0; padding: 20px 0;
+    font-family: 'Comfortaa', cursive;
+    background: linear-gradient(135deg, #fff0f5, #ffd1dc);
+    color: #5d2a42;
+    min-height: 100vh;
 }
-
-/* Кастомный курсор-сердечко */
-.cursor {
-    position: fixed;
-    width: 30px; height: 30px;
-    background: radial-gradient(circle, #ff69b4, #ff1493);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.1s;
-}
-
-/* Герой-секция */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-.glitch {
-    font-family: 'Playfair Display', serif;
-    font-size: 5.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 20px #ff69b4;
-    animation: glitch 3s infinite;
-}
-@keyframes glitch {
-    0%,100% { text-shadow: 0.05em 0 0 #ff69b4, -0.05em 0 0 #ff1493; }
-    50% { text-shadow: -0.05em 0 0 #ff69b4, 0.05em 0 0 #ff1493; }
-}
-.subtitle {
-    font-size: 1.8rem;
-    margin-top: 20px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.scroll-down {
-    position: absolute;
-    bottom: 40px;
-    animation: bounce 2s infinite;
-}
-@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-/* Остальные секции — стеклянный морфизм + параллакс + флип-карточки */
-.counter-glass, .letter-card {
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(15px);
+.container { max-width: 420px; margin: 0 auto; text-align: center; }
+h1 { font-size: 2.8rem; color: #d81b60; margin: 30px 0; }
+.big-heart { font-size: 3rem; animation: pulse 2s infinite; }
+.card {
+    background: rgba(255,255,255,0.8);
     border-radius: 25px;
-    padding: 30px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 32px rgba(255,105,180,0.3);
+    padding: 25px;
+    margin: 25px auto;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(255,105,180,0.3);
 }
-.days-number { font-size: 4rem; color: #ff1493; }
-.gallery-grid img {
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.6s;
+.card img { max-width: 100%; border-radius: 20px; margin: 15px 0; }
+.btn {
+    display: block; width: 80%; margin: 20px auto;
+    background: #ff8fab;
+    color: white; border: none; padding: 18px;
+    border-radius: 50px; font-size: 1.4rem;
+    box-shadow: 0 8px 20px #ff69b466;
+    cursor: pointer; transition: 0.3s;
 }
-.letter-inner { transition: transform 0.8s; transform-style: preserve-3d; }
-.letter-front, .letter-back {
-    backface-visibility: hidden;
-    border-radius: 20px;
-    padding: 40px;
-    background: rgba(255,255,255,0.9);
+.btn:active { transform: scale(0.95); }
+.counter {
+    font-size: 1.6rem; background: white; padding: 20px;
+    border-radius: 30px; margin: 40px auto; max-width: 320px;
+    box-shadow: 0 10px 25px rgba(255,105,180,0.3);
 }
-.letter-back { transform: rotateY(180deg); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-/* Кнопка любви */
-.love-button {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #ff1493, #ff69b4);
-    color: white;
-    border: none;
-    padding: 20px 50px;
-    font-size: 1.8rem;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(255,20,147,0.5);
-    z-index: 100;
-    transition: 0.4s;
-}
-.love-button:hover { transform: translateX(-50%) scale(1.1); }
+@keyframes pulse { 0%,100% {transform:scale(1)} 50% {transform:scale(1.2)} }
