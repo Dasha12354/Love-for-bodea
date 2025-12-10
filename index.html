@@ -3,64 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бодя, это только для тебя ♡</title>
+    <title>Для моего Боди ♡</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="cursor"></div>
+<div class="container">
 
-<!-- Герой-секция -->
-<section class="hero">
-    <div class="floating-hearts"></div>
-    <h1 class="glitch" data-text="Бодечка">Бодечка</h1>
-    <p class="subtitle">ты — моё самое большое чудо</p>
-    <div class="scroll-down">листай вниз ♡</div>
-</section>
+    <h1>Бодечка, это для тебя</h1>
+    <p class="big-heart">♡ ♡ ♡</p>
 
-<!-- Счётчик дней -->
-<section class="counter-section">
-    <div class="counter-glass">
-        <p>Мы вместе уже</p>
-        <span id="days" class="days-number">0</span>
-        <p>дней подряд</p>
+    <div class="card">
+        <p>Ты самое лучшее, что у меня есть</p>
+        <p>Каждый день с тобой — это счастье</p>
     </div>
-</section>
 
-<!-- Галерея с параллаксом -->
-<section class="gallery">
-    <h2 class="section-title">Наши моменты</h2>
-    <div class="gallery-grid">
-        <img src="photos/photo_1.jpg" class="gallery-item" data-speed="0.8">
-        <img src="photos/photo_2.jpg" class="gallery-item" data-speed="1.2">
-        <img src="photos/photo_3.jpg" class="gallery-item" data-speed="0.9">
-        <img src="photos/photo_4.jpg" class="gallery-item" data-speed="1.1">
-        <img src="photos/photo_5.jpg" class="gallery-item" data-speed="0.7">
+   
+ 
+    <div class="card">
+        <img src="photo_1.jpg" alt="мы">
+        <p>Помнишь этот момент? Я до сих пор улыбаюсь ♡</p>
     </div>
-</section>
 
-<!-- Послания на карточках -->
-<section class="letters">
-    <h2 class="section-title">Письма от меня тебе</h2>
-    <div class="letter-card" onclick="flip(this)">
-        <div class="letter-inner">
-            <div class="letter-front">Открыть письмо №1</div>
-            <div class="letter-back">Ты даже не представляешь, как сильно я тебя люблю… Каждый твой взгляд — как электричество по коже ♡</div>
-        </div>
+    <div class="card">
+        <img src="photo_2.jpg" alt="мы">
+        <p>Самое тёплое воспоминание</p>
     </div>
-    <div class="letter-card" onclick="flip(this)">
-        <div class="letter-inner">
-            <div class="letter-front">Открыть письмо №2</div>
-            <div class="letter-back">Спасибо, что ты у меня есть. Я самая счастливая на свете, потому что ты мой.</div>
-        </div>
+
+    <div class="card">
+        <img src="photo_3.jpg" alt="мы">
+        <p>Когда мы самые счастливые</p>
     </div>
-</section>
 
-<!-- Кнопка любви -->
-<button class="love-button" onclick="explodeLove()">Я тебя очень-очень люблю!</button>
+    <div class="card">
+        <img src="photo_4.jpg" alt="мы">
+        <p>Мой любимый человек на свете</p>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <div class="card">
+        <img src="photo_5.jpg" alt="мы">
+        <p>И так будет всегда ♡</p>
+    </div>
+
+    <!-- Новые «поюхи» -->
+    <div class="counter">Мы вместе уже <span id="days">0</span> дней ♡</div>
+
+    <button class="btn" onclick="confettiRain()">Я тебя очень люблю!</button>
+    <button class="btn" onclick="playSong()">Наша песня ♪</button>
+  
+
+</div>
+
+<audio id="loveSong" src="song.mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
