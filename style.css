@@ -134,3 +134,25 @@ body {
     color: #ff69b4;
     z-index: 10000;
 }
+
+.song-modal {
+    text-align: center;
+    padding: 40px 20px;
+}
+.play-song-btn {
+    background: #ff1493;
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.6rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255,20,147,0.5);
+    transition: 0.3s;
+}
+.play-song-btn:hover {
+    transform: scale(1.05);
+}
+.play-song-btn:active {
+    transform: scale(0.95);
+}
