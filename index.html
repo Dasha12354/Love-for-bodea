@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бодя, это только для тебя ♡</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="hearts-bg"></div>
+
+<div class="container">
+    <h1 class="title">Моему Бодечке</h1>
+    <p class="subtitle">от твоей Даши, которая любит тебя безумно</p>
+
+    <div class="counter" id="daysTogether">Мы вместе уже <span id="days">0</span> дней ♡</div>
+
+    <div class="cards">
+        <div class="card" onclick="openModal(1)">
+            <p>Первое послание</p>
+        </div>
+        <div class="card" onclick="openModal(2)">
+            <p>Наши фото</p>
+        </div>
+        <div class="card" onclick="openModal(3)">
+            <p>Почему я тебя люблю</p>
+        </div>
+        <div class="card" onclick="playSong()">
+            <p>Наша песня песня ♪</p>
+        </div>
+    </div>
+
+    <button class="love-btn" onclick="shootConfetti()">Я тебя очень люблю! ♡</button>
+</div>
+
+<!-- Модальные окна -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Первое, что я хочу сказать…</h2>
+        <p>Ты — лучшее, что случилось со мной за всю жизнь. Каждый день с тобой — как в сказке. Спасибо, что ты есть у меня ♡</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content gallery">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Наши самые тёплые моменты</h2>
+        <img src="assets/photo1.jpg" alt="">
+        <img src="assets/photo2.jpg" alt="">
+        <img src="assets/photo3.jpg" alt="">
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Почему я тебя так сильно люблю</h2>
+        <ul class="love-list">
+            <li>За твою улыбку, от которой таю</li>
+            <li>За то, как ты обнимаешь меня</li>
+            <li>За то, что ты всегда рядом</li>
+            <li>Просто потому что ты — это ТЫ ♡</li>
+        </ul>
+    </div>
+</div>
+
+<audio id="loveSong" src="assets/song.mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
