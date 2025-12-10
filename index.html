@@ -27,9 +27,9 @@
         <div class="card" onclick="openModal(3)">
             <p>Почему я тебя люблю 🤭</p>
         </div>
-        <div class="card" onclick="playSong()">
-            <p>Наша песня ♪</p>
-        </div>
+       <div class="card" onclick="openModal(4)">
+    <p>Наша песня ♪</p>
+</div>
     </div>
 
     <button class="love-btn" onclick="shootConfetti()">Я тебя очень люблю ♡</button>
@@ -89,15 +89,26 @@
     </div>
 </div>
 
-<audio id="loveSong" src="assets/song.mp3"></audio>
+<div id="modal4" class="modal">
+    <div class="modal-content song-modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <h2>Наша с тобой песня ♡</h2>
+        <p style="font-size:1.6rem; margin:25px 0;">Вспомни как это было )))</p>
+        
+        <button class="play-song-btn" onclick="playLoveSong.play()">
+            ▶  Включить песню
+        </button>
+        
+        <button class="play-song-btn" onclick="LoveSong.pause()" style="background:#ff8fab; margin-top:15px;">
+            ❚❚  Пауза
+        </button>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
 
 
 
