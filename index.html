@@ -5,71 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бодя, это только для тебя ♡</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="hearts-bg"></div>
+<div class="cursor"></div>
 
-<div class="container">
-    <h1 class="title">Моему Бодечке</h1>
-    <p class="subtitle">от твоей Даши, которая любит тебя безумно</p>
+<!-- Герой-секция -->
+<section class="hero">
+    <div class="floating-hearts"></div>
+    <h1 class="glitch" data-text="Бодечка">Бодечка</h1>
+    <p class="subtitle">ты — моё самое большое чудо</p>
+    <div class="scroll-down">листай вниз ♡</div>
+</section>
 
-    <div class="counter" id="daysTogether">Мы вместе уже <span id="days">0</span> дней ♡</div>
+<!-- Счётчик дней -->
+<section class="counter-section">
+    <div class="counter-glass">
+        <p>Мы вместе уже</p>
+        <span id="days" class="days-number">0</span>
+        <p>дней подряд</p>
+    </div>
+</section>
 
-    <div class="cards">
-        <div class="card" onclick="openModal(1)">
-            <p>Первое послание</p>
-        </div>
-        <div class="card" onclick="openModal(2)">
-            <p>Наши фото</p>
-        </div>
-        <div class="card" onclick="openModal(3)">
-            <p>Почему я тебя люблю</p>
-        </div>
-        <div class="card" onclick="playSong()">
-            <p>Наша песня песня ♪</p>
+<!-- Галерея с параллаксом -->
+<section class="gallery">
+    <h2 class="section-title">Наши моменты</h2>
+    <div class="gallery-grid">
+        <img src="photos/photo_1.jpg" class="gallery-item" data-speed="0.8">
+        <img src="photos/photo_2.jpg" class="gallery-item" data-speed="1.2">
+        <img src="photos/photo_3.jpg" class="gallery-item" data-speed="0.9">
+        <img src="photos/photo_4.jpg" class="gallery-item" data-speed="1.1">
+        <img src="photos/photo_5.jpg" class="gallery-item" data-speed="0.7">
+    </div>
+</section>
+
+<!-- Послания на карточках -->
+<section class="letters">
+    <h2 class="section-title">Письма от меня тебе</h2>
+    <div class="letter-card" onclick="flip(this)">
+        <div class="letter-inner">
+            <div class="letter-front">Открыть письмо №1</div>
+            <div class="letter-back">Ты даже не представляешь, как сильно я тебя люблю… Каждый твой взгляд — как электричество по коже ♡</div>
         </div>
     </div>
-
-    <button class="love-btn" onclick="shootConfetti()">Я тебя очень люблю! ♡</button>
-</div>
-
-<!-- Модальные окна -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
-        <h2>Первое, что я хочу сказать…</h2>
-        <p>Ты — лучшее, что случилось со мной за всю жизнь. Каждый день с тобой — как в сказке. Спасибо, что ты есть у меня ♡</p>
+    <div class="letter-card" onclick="flip(this)">
+        <div class="letter-inner">
+            <div class="letter-front">Открыть письмо №2</div>
+            <div class="letter-back">Спасибо, что ты у меня есть. Я самая счастливая на свете, потому что ты мой.</div>
+        </div>
     </div>
-</div>
+</section>
 
-<div id="modal2" class="modal">
-    <div class="modal-content gallery">
-        <span class="close" onclick="closeModal()">×</span>
-        <h2>Наши самые тёплые моменты</h2>
-        <img src="assets/photo1.jpg" alt="">
-        <img src="assets/photo2.jpg" alt="">
-        <img src="assets/photo3.jpg" alt="">
-    </div>
-</div>
+<!-- Кнопка любви -->
+<button class="love-button" onclick="explodeLove()">Я тебя очень-очень люблю!</button>
 
-<div id="modal3" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">×</span>
-        <h2>Почему я тебя так сильно люблю</h2>
-        <ul class="love-list">
-            <li>За твою улыбку, от которой таю</li>
-            <li>За то, как ты обнимаешь меня</li>
-            <li>За то, что ты всегда рядом</li>
-            <li>Просто потому что ты — это ТЫ ♡</li>
-        </ul>
-    </div>
-</div>
-
-<audio id="loveSong" src="assets/song.mp3"></audio>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
